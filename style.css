@@ -9,8 +9,8 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  /*background: radial-gradient(circle, #ffffff, #000000);*/
-  background-color: rgb(255, 255, 255);
+  background: radial-gradient(circle, #ffffff, #ffffff);
+  /*background-color: rgb(255, 255, 255);*/
 }
 
 html {
@@ -18,7 +18,7 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85);
+  color: rgb(0, 0, 0);
 }
 
 /* TRANSITION */
@@ -48,16 +48,16 @@ nav {
 }
 
 a {
-  color: black;
+  color: rgb(0, 0, 0);
   text-decoration: none;
-  text-decoration-color: white;
+  text-decoration-color: rgb(255, 255, 255);
 }
 
 a:hover {
-  color: grey;
+  color: rgb(94, 94, 94);
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-decoration-color: rgb(0, 0, 0);
 }
 
 .logo {
@@ -180,7 +180,7 @@ section {
 
 .profile-pic {
   border-radius: 50%;
-  box-shadow: -5px 1px 10px rgb(158, 158, 158);
+  box-shadow: -2px 1px 5px rgb(144, 144, 144);
 }
 
 .section__text {
