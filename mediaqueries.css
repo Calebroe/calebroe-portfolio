@@ -101,3 +101,11 @@
     text-align: justify;
   }
 }
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+  .tech-button {
+    flex: 0 1 100%; /* Full width for buttons on mobile */
+    max-width: 100%;
+  }
+}
