@@ -14,6 +14,7 @@
         <div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#jobs">Jobs</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -93,6 +94,54 @@
             </div>
             <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
         </section>
+
+        <section id="jobs">
+          <h1 class="title">Jobs</h1>
+          <div class="carousel-container">
+              <button class="carousel-button left" onclick="prevJob()">&#9664;</button>
+              <div class="carousel-wrapper">
+                  <div class="carousel">
+                      <div class="job-item" id="job-Company1">
+                          <img src="./assets/jobs/vaneerden-logo.png" alt="Van Eerden Foodservice logo" class="job-image"/>
+                          <h3 class="job-title">Van Eerden Foodservice</h3>
+                          <button class="job-button" onclick="openJobOverlay('Company1')">Learn More</button>
+                      </div>
+                      <div class="job-item" id="job-Company2">
+                          <img src="./assets/jobs/levata-logo.jpg" alt="Levata logo" class="job-image"/>
+                          <h3 class="job-title">Levata</h3>
+                          <button class="job-button" onclick="openJobOverlay('Company2')">Learn More</button>
+                      </div>
+                      <div class="job-item" id="job-Company3">
+                          <img src="./assets/jobs/saf-holland.png" alt="SAF Holland Logo" class="job-image"/>
+                          <h3 class="job-title">SAF Holland</h3>
+                          <button class="job-button" onclick="openJobOverlay('Company3')">Learn More</button>
+                      </div>
+                      <div class="job-item" id="job-Company4">
+                          <img src="./assets/company4-logo.png" alt="Company 4 Logo" class="job-image"/>
+                          <h3 class="job-title">Company 4</h3>
+                          <button class="job-button" onclick="openJobOverlay('Company4')">Learn More</button>
+                      </div>
+                      <!-- Add more job items as needed -->
+                  </div>
+              </div>
+              <button class="carousel-button right" onclick="nextJob()">&#9654;</button>
+          </div>
+      </section>
+      
+      <div id="job-overlay" class="overlay">
+          <div class="overlay-content">
+              <span class="closebtn" onclick="closeJobOverlay()">&times;</span>
+              <img id="job-banner" src="" alt="" class="job-banner"/>
+              <h2 id="job-company-title"></h2>
+              <p id="job-years"></p>
+              <div id="job-details">
+                  <h3 id="job-role-title"></h3>
+                  <p id="job-description"></p>
+                  <div id="job-links"></div>
+              </div>
+          </div>
+      </div>
+
         <section id="experience">
             <p class="section__text__p1">Explore My</p>
             <h1 class="title">Experience</h1>
@@ -270,7 +319,7 @@
                       </video>
                   </div>
               </div>
-          </div>
+          </div>        
           
         </section>
         <section id="projects">
@@ -398,6 +447,7 @@
             <div class="nav-links-container">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
+                    <li><a href="#jobs">Jobs</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
