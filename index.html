@@ -130,6 +130,7 @@
                         <button class="tech-button" onclick="openOverlay('Java')">Java</button>
                         <button class="tech-button" onclick="openOverlay('C')">C</button>
                         <button class="tech-button" onclick="openOverlay('C++')">C++</button>
+                        <button class="tech-button" onclick="openOverlay('CSharp')">C Sharp</button>
                         <button class="tech-button" onclick="openOverlay('SQL')">SQL</button>
                         <button class="tech-button" onclick="openOverlay('MySQL')">MySQL</button>
                         <button class="tech-button" onclick="openOverlay('MongoDB')">MongoDB</button>
@@ -252,14 +253,25 @@
                 </div>
             </div>
             <div id="overlay" class="overlay">
-                <div class="overlay-content">
-                    <span class="closebtn" onclick="closeOverlay()">&times;</span>
-                    <h2 id="tech-title"></h2>
-                    <p id="tech-experience"></p>
-                    <p id="tech-projects"></p>
-                    <p id="tech-thoughts"></p>
-                </div>
-            </div>
+              <div class="overlay-content">
+                  <span class="closebtn" onclick="closeOverlay()">&times;</span>
+                  <img id="tech-banner" src="" alt="" class="tech-banner"/>
+                  <h2 id="tech-title"></h2>
+                  <p id="tech-proficiency" class="tech-proficiency"></p>
+                  <p id="tech-description"></p>
+                  <p id="tech-thoughts"></p>
+                  <div id="tech-projects"></div>
+                  <div id="tech-links"></div>
+                  <div id="tech-video-container">
+                      <h3>Watch My Walkthrough</h3>
+                      <video controls>
+                          <source src="" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+              </div>
+          </div>
+          
         </section>
         <section id="projects">
             <p class="section__text__p1">Browse My Recent</p>
