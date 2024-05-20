@@ -63,12 +63,16 @@ function closeOverlay() {
   document.body.classList.remove('no-scroll'); // Re-enable body scroll
 }
 
-
 // Close overlay when clicking on the background
 document.getElementById('overlay').addEventListener('click', function(event) {
   if (event.target === this) {
       closeOverlay();
   }
+});
+
+// Ensure overlay is hidden on page load
+window.addEventListener('load', function() {
+  document.getElementById('overlay').style.display = 'none';
 });
 
 let techData = {};
@@ -102,7 +106,7 @@ const jobData = [
   {
       id: 'Company2',
       name: 'Levata',
-      image: './assets/jobs/levata-logo.jpg',
+      image: './assets/jobs/levata-logo.png',
       years: '2020 - 2024',
       role: 'IT Support Liason',
       description: 'Started with the company as a warehouse employee, I transitiioned into a buisness analyst/IT support technician working flexible hours around my studies at GVSU. Summer of 2023 I took on the role of IT Liason, overseeing three physical locations in the Holland Michigan area, including two warehouses.',
@@ -121,18 +125,6 @@ const jobData = [
       links: [
           { url: 'https://safholland.com/us/en/', text: 'Company Website' },
           { url: 'https://www.linkedin.com/company/safholland', text: 'LinkedIn' }
-      ]
-  },
-  {
-      id: 'Company4',
-      name: 'Company 4',
-      image: './assets/company4-logo.png',
-      years: '2016 - 2018',
-      role: 'Junior Developer',
-      description: 'Worked on various frontend and backend projects...',
-      links: [
-          { url: 'https://company4.com', text: 'Company Website' },
-          { url: 'https://linkedin.com/company4', text: 'LinkedIn' }
       ]
   }
 ];
@@ -191,3 +183,36 @@ document.getElementById('job-overlay').addEventListener('click', function(event)
       closeJobOverlay();
   }
 });
+
+// Ensure overlay is hidden on page load
+window.addEventListener('load', function() {
+  document.getElementById('job-overlay').style.display = 'none';
+});
+
+//PROJECT CAROUSEL
+
+let currentProjectIndex = 0;
+
+function updateProjectCarousel() {
+    const carousel = document.querySelector('.carousel');
+    const projectWidth = document.querySelector('.project-item').offsetWidth;
+    carousel.style.transform = `translateX(-${currentProjectIndex * projectWidth}px)`;
+}
+
+function nextProject() {
+    const totalProjects = document.querySelectorAll('.project-item').length;
+    const visibleProjects = Math.floor(document.querySelector('.carousel-wrapper').offsetWidth / document.querySelector('.project-item').offsetWidth);
+    if (currentProjectIndex < totalProjects - visibleProjects) {
+        currentProjectIndex++;
+        updateProjectCarousel();
+    }
+}
+
+function prevProject() {
+    if (currentProjectIndex > 0) {
+        currentProjectIndex--;
+        updateProjectCarousel();
+    }
+}
+
+window.addEventListener('resize', updateProjectCarousel);

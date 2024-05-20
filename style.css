@@ -326,17 +326,20 @@ section {
 /* Jobs section */
 
 #jobs {
-  width: 80%;
   margin: 0 auto;
   padding: 20px 0;
   text-align: center;
 }
 
 .carousel-container {
+  width: 70%;
+  max-width: 1350px;
   position: relative;
   display: flex;
   align-items: center;
   overflow: hidden;
+  border-radius: 10px;
+  margin: 0 auto; /* Center the container */
 }
 
 .carousel-wrapper {
@@ -352,22 +355,21 @@ section {
 .job-item {
   min-width: 100%;
   box-sizing: border-box;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   padding: 20px;
-  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .job-image {
-  width: 100px;
-  height: 100px;
+  width: 90%;
+  height: 250px;
   object-fit: contain;
   margin-bottom: 10px;
 }
 
 .job-title {
-  font-size: 18px;
+  font-size: 44px;
   margin: 10px 0;
 }
 
@@ -405,46 +407,8 @@ section {
   right: 0;
 }
 
-/* Overlay Styles */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  padding: 0; /* No padding needed */
-  box-sizing: border-box;
-}
-
-.overlay-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 800px;
-  width: 100%;
-  max-height: 80vh; /* Limit the max height */
-  overflow-y: auto; /* Enable vertical scrolling */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  position: relative; /* Ensure it's positioned correctly */
-}
-
-.closebtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
-  cursor: pointer;
-}
-
 .job-banner {
-  width: 100px;
+  width: 100%;
   height: auto;
   margin: 0 auto;
 }
@@ -473,9 +437,6 @@ section {
 #job-links a:hover {
   text-decoration: underline;
 }
-
-
-
 
 /* EXPERIENCE SECTION */
 
@@ -564,37 +525,13 @@ section {
   background-color: #e7f6ff;
 }
 
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
-}
-
-.overlay-content {
-  position: relative;
-  top: 25%;
-  margin: auto;
-  padding: 20px;
-  width: 80%;
-  background-color: #fff;
-}
-
-.closebtn {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  color: #000;
-  font-size: 35px;
-  cursor: pointer;
-}
 
 /* Content Overlays */
+
+/* Prevent body scroll when overlay is open */
+body.no-scroll {
+  overflow: hidden;
+}
 
 /* Ensure the overlay covers the entire viewport */
 .overlay {
@@ -612,14 +549,15 @@ section {
   box-sizing: border-box;
 }
 
-
 /* Center the overlay content and allow vertical scrolling if needed */
 .overlay-content {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
-  max-width: 800px;
+  max-width: 1200px;
   width: 100%;
+  max-height: 80vh; /* Limit the max height */
+  overflow-y: auto; /* Enable vertical scrolling */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
@@ -683,90 +621,15 @@ section {
   max-height: 300px;
 }
 
-/* Prevent body scroll when overlay is open */
-body.no-scroll {
-  overflow: hidden;
-}
-
 /* PROJECTS SECTION */
 
 #projects {
-  position: relative;
-  margin-top: 20px; /* Added to provide spacing with the previous section */
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
 }
 
-.color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
-}
-
-.project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
-  box-shadow: -5px 3px 7px rgb(156, 156, 156);
-}
-
-.project-title {
-  margin: 1rem;
-  color: black;
-}
-
-.project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
-}
-
-.project-description {
-  text-align: left;
-  margin: 1rem 0;
-}
-
-.project-technologies {
-  text-align: left;
-  margin: 0.5rem 0;
-  font-weight: 600;
-}
-
-/* CONTACT */
-
-#contact {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 70vh;
-}
-
-.contact-info-upper-container {
-  display: flex;
-  justify-content: center;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
-  margin: 2rem auto;
-  padding: 0.5rem;
-}
-
-.contact-info-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
-}
-
-.contact-info-container p {
-  font-size: larger;
-}
-
-.contact-icon {
-  cursor: default;
-}
-
-.email-icon {
-  height: 2.5rem;
-}
 
 /* FOOTER SECTION */
 
