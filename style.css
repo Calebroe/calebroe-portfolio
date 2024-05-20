@@ -9,7 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: radial-gradient(circle, #ffffff, #ffffff);
+  background: radial-gradient(circle, #ff96fc, #180cc6);
   /*background-color: rgb(255, 255, 255);*/
 }
 
@@ -152,7 +152,7 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
+  height: 100%;
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
@@ -323,123 +323,313 @@ section {
   margin: auto 0;
 }
 
+/* Jobs section */
+
+#jobs {
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.carousel-container {
+  width: 70%;
+  max-width: 1350px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 auto; /* Center the container */
+}
+
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.job-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.job-image {
+  width: 90%;
+  height: 250px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.job-title {
+  font-size: 44px;
+  margin: 10px 0;
+}
+
+.job-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.job-button:hover {
+  background-color: #0056b3;
+}
+
+.carousel-button {
+  background-color: transparent;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: #007bff;
+}
+
+.carousel-button.left {
+  left: 0;
+}
+
+.carousel-button.right {
+  right: 0;
+}
+
+.job-banner {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#job-company-title {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#job-years {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#job-details {
+  text-align: left;
+}
+
+#job-links a {
+  display: block;
+  margin-bottom: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+#job-links a:hover {
+  text-decoration: underline;
+}
+
 /* EXPERIENCE SECTION */
 
 #experience {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-top: 100px;
+  margin-bottom: 100px; /* Added to provide spacing with the next section */
 }
 
-.experience-sub-title {
-  color: rgb(85, 85, 85);
-  font-weight: 600;
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
+.tabs-container {
+  display: flex;
+  flex: 1;
 }
 
-.experience-details-container {
+.tabs {
+  flex: 0 1 300px; /* Fixed width for tabs panel */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-right: 1px solid #ccc;
+  max-height: 100vh; /* Set max height for tabs */
+  overflow-y: auto; /* Enable scrolling for tabs */
+}
+
+.tab-link {
+  padding: 15px;
+  cursor: pointer;
+  background-color: #ebebeb;
+  border: none;
+  text-align: right;
+  outline: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  color:#686868
+}
+
+.tab-link:hover, .tab-link.active {
+  background-color:  #ffffff;
+  color:  #000000;
+}
+
+.tab-content-container {
+  flex: 1; /* Ensure the content panel fills the remaining space */
+  padding: 20px;
+  background-color: #fff;
+  overflow-y: auto; /* Enable scrolling for tab content */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: flex-start;
+  min-height: 500px; /* Set minimum height */
+}
+
+.tab-content {
+  display: none;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: flex-start; /* Ensure items start from the top */
+}
+
+.tab-content.show {
+  display: flex; /* Ensure the tab-content is shown when active */
+}
+
+.tech-button {
+  flex: 1 1 calc(33.333% - 20px); /* Three buttons per row */
+  padding: 10px 15px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  height: 50px; /* Set fixed height */
+}
+
+.tech-button:hover {
+  background-color: #e7f6ff;
+}
+
+
+/* Content Overlays */
+
+/* Prevent body scroll when overlay is open */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Ensure the overlay covers the entire viewport */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
+  align-items: center; /* Center content vertically */
+  z-index: 1000;
+  padding: 0; /* No padding needed */
+  box-sizing: border-box;
+}
+
+/* Center the overlay content and allow vertical scrolling if needed */
+.overlay-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 80vh; /* Limit the max height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: flex;
   flex-direction: column;
+  position: relative; /* Ensure it's positioned correctly */
 }
 
-.article-container {
-  display: flex;
-  text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
 }
 
-article {
-  display: flex;
-  width: 10rem;
-  justify-content: space-around;
-  gap: 0.5rem;
+.tech-banner {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
 }
 
-article .icon {
-  cursor: default;
+.tech-title {
+  font-size: 24px;
+  margin: 15px 0 5px;
+}
+
+.tech-proficiency {
+  font-size: 14px;
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.tech-description {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.tech-thoughts {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+#tech-projects {
+  margin-bottom: 15px;
+}
+
+#tech-links a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#tech-video-container {
+  margin-top: 15px;
+}
+
+#tech-video-container h3 {
+  margin-bottom: 10px;
+}
+
+#tech-video-container video {
+  width: 100%;
+  max-height: 300px;
 }
 
 /* PROJECTS SECTION */
 
 #projects {
-  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
 }
 
-.color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
-}
-
-.project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
-  box-shadow: -5px 3px 7px rgb(156, 156, 156);
-}
-
-.project-title {
-  margin: 1rem;
-  color: black;
-}
-
-.project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
-}
-
-.project-description {
-  text-align: left;
-  margin: 1rem 0;
-}
-
-.project-technologies {
-  text-align: left;
-  margin: 0.5rem 0;
-  font-weight: 600;
-}
-
-/* CONTACT */
-
-#contact {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 70vh;
-}
-
-.contact-info-upper-container {
-  display: flex;
-  justify-content: center;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
-  margin: 2rem auto;
-  padding: 0.5rem;
-}
-
-.contact-info-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
-}
-
-.contact-info-container p {
-  font-size: larger;
-}
-
-.contact-icon {
-  cursor: default;
-}
-
-.email-icon {
-  height: 2.5rem;
-}
 
 /* FOOTER SECTION */
 
